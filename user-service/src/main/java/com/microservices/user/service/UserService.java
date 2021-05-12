@@ -21,10 +21,6 @@ public class UserService {
 
     private static String url = "http://localhost:9001/departments/";
 
-    public User getById(Long id) {
-        return repository.findUserById(id);
-    }
-
     public User saveUser(User user) {
         log.info("Inside saveUser method of service");
         return repository.save(user);

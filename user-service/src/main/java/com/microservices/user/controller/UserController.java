@@ -22,11 +22,6 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable Long id) {
-        return service.getById(id);
-    }
-
-    @GetMapping("/{id}")
     public ResponseTemplate getUserWithDepartment(@PathVariable("id")  Long userId){
         log.info("Inside getUserWithDepartment method of controller");
         return service.getUserWithDepartment(userId);
