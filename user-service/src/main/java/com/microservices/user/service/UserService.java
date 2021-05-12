@@ -19,7 +19,7 @@ public class UserService {
     @Autowired
     private RestTemplate restTemplate;
 
-    private static String url = "http://localhost:9001/departments/";
+    private static String url = "http://DEPARTMENT-SERVICE/departments/";
 
     public User saveUser(User user) {
         log.info("Inside saveUser method of service");
