@@ -2,6 +2,7 @@ package com.microservices.user.controller;
 
 import com.microservices.user.entity.User;
 import com.microservices.user.service.UserService;
+import com.microservices.user.value_object.ResponseTemplate;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,5 +24,11 @@ public class UserController {
     @GetMapping("/{id}")
     public User getUser(@PathVariable Long id) {
         return service.getById(id);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseTemplate getUserWithDepartment(@PathVariable("id")  Long userId){
+        log.info("Inside getUserWithDepartment method of controller");
+        return service.getUserWithDepartment(userId);
     }
 }
